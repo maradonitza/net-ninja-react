@@ -12,9 +12,9 @@ class AuthContextProvider extends Component
     render()
     {
         return(
-            <AuthContextProvider value={{...this.state}}>
+            <AuthContext.Provider value={{...this.state}}>
                 {this.props.children}
-            </AuthContextProvider>
+            </AuthContext.Provider>
         );
     }
 }
