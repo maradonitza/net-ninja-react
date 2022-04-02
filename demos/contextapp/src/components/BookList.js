@@ -8,7 +8,8 @@ class BookList extends Component
         const {isAuthenticated, anotherProperty} = this.context;
         return (
             <div className='book-list'>
-                {isAuthenticated? 'Logged in': 'Logged out'}
+                {isAuthenticated? 'Logged in': 'Logged out'} <br/>
+                Book list: <br/>
                 <ul> 
                     <li>Three men in a boat</li> 
                     <li>Rumi's book of poetry</li> 
