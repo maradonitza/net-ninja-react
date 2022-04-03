@@ -1,4 +1,5 @@
 import './App.css';
+import AuthToggle from './components/AuthToggle';
 import BookList from './components/BookList';
 import MovieList from './components/MovieList';
 import AuthContextProvider from './contexts/AuthContext';
@@ -9,6 +10,7 @@ function App() {
     <div className="App">
       <LanguageContextProvider>
         <AuthContextProvider>
+          <AuthToggle />
           <BookList />
           <MovieList />
         </AuthContextProvider>

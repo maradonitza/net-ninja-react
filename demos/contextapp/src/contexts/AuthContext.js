@@ -9,10 +9,15 @@ class AuthContextProvider extends Component
         anotherProperty: "geronimo"
     }
 
+    toggleAuth = () => 
+    {
+        this.setState({isAuthenticated: !this.state.isAuthenticated})
+    }
+
     render()
     {
         return(
-            <AuthContext.Provider value={{...this.state}}>
+            <AuthContext.Provider value={{...this.state, toggleAuth: this.toggleAuth}}>
                 {this.props.children}
             </AuthContext.Provider>
         );
