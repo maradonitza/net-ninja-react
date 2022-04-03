@@ -1,12 +1,25 @@
-import React from "react";
+import React, {useState} from "react";
 
 const SongList = () => {
+    const [songs, setSongs] = useState([
+        {title: 'Lo que te conté mientras te hacias la dormida', id: 1},
+        {title: 'Rosas', id: 2},
+        {title: 'Las paz de tus ojos', id: 3}
+    ]);
+
+    const addSong=() => {
+        setSongs([...songs, {title: 'Tu recuerdo', id: 4}])
+    }
     return(
         <div className="song-list">
             <ul>
-                <li>this wild darkness</li>
-                <li>memory gospel</li>
+                {songs.map(song => {
+                    return(
+                        <li key={song.id}>{song.title}</li>
+                    );
+                })}
             </ul>
+            <button onClick={addSong}>Add a song</button>
         </div>
     );
 }
