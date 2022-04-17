@@ -5,8 +5,8 @@ const Navbar = () => {
     const {movies} = useContext(MovieContext);
     return (
         <div className="navbar">
-            <h1>Movie list</h1>
-            <p>Number of movies: {movies.length}</p>
+            <h1>Our movie list</h1>
+            <p>Number of movies in our list: {movies.length}</p>
         </div>
     );
 }

@@ -1,14 +1,22 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import { MovieContext } from "../contexts/MovieContext";
+import MovieDetails from "./MovieDetails";
 
-const Navbar = () => {
-    const {movies} = useContext(MovieContext);
-    return (
-        <div className="navbar">
-            <h1>Our movie list</h1>
-            <p>Number of movies in our list: {movies.length}</p>
+const MovieList = () => {
+    const { movies } = useContext(MovieContext);
+    
+    return movies.length ? (
+        <div className="movie-list">
+            <ul>
+                { movies.map(movie => {
+                    return(<MovieDetails movie={movie} key={movie.id} />);    
+                    })
+                }
+            </ul>
         </div>
+    ): (
+        <div className="empty">No movies available. </div>
     );
 }
- 
-export default Navbar;
+
+export default MovieList;
